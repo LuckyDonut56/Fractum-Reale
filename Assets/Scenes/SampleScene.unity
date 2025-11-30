@@ -282,6 +282,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.026356466, y: 0.87558126, z: 2.1001036}
   m_Center: {x: -0.002696312, y: 0.43779147, z: 0.11978929}
+--- !u!114 &130890209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130890201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc995e7c3af75c447908f007b6cb1787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 90
 --- !u!1 &156306203 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 921391927218321214, guid: 3e1d4a8ede034ef4eaf9c52ad9674ecb, type: 3}
@@ -763,6 +776,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2847660255904575726, guid: 3e1d4a8ede034ef4eaf9c52ad9674ecb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -1294892128559850198, guid: 3e1d4a8ede034ef4eaf9c52ad9674ecb, type: 3}
       propertyPath: m_Intensity
       value: 1
@@ -847,6 +864,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8281769149050342385, guid: 3e1d4a8ede034ef4eaf9c52ad9674ecb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 130890205}
+    - targetCorrespondingSourceObject: {fileID: -8281769149050342385, guid: 3e1d4a8ede034ef4eaf9c52ad9674ecb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 130890209}
     - targetCorrespondingSourceObject: {fileID: -811243947463074934, guid: 3e1d4a8ede034ef4eaf9c52ad9674ecb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1162127002}
@@ -1178,6 +1198,7 @@ MonoBehaviour:
   gravity: 0
   mouseSensitivity: 2
   maxLookAngle: 80
+  interactionDistance: 5
   enableCameraBobbing: 1
   bobbingAmount: 0.05
   bobbingSpeed: 10

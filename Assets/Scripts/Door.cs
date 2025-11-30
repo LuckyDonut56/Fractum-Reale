@@ -10,7 +10,7 @@ public class Door : MonoBehaviour, IInteractable
     {
         float targetAngle = isOpen ? 90f : 0f;
         currentAngle = Mathf.MoveTowards(currentAngle, targetAngle, speed * Time.deltaTime);
-        transform.localRotation = Quaternion.Euler(0, currentAngle, 0);
+        transform.localRotation = Quaternion.Euler(0, 0, currentAngle);
     }
 
     public void Interact()
