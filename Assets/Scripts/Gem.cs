@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour, IInteractable
 {
+    public Inventory inventory;
     public void Interact()
     {
-        Inventory.AddObject(gameObject);
+        inventory.AddObject(gameObject);
     }
 }
