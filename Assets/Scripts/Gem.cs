@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour, IInteractable
 {
-    public Inventory inventory;
+    public enum GemColor {Red, Green, Blue}
+    public GemColor color;
     public void Interact()
     {
-        inventory.AddObject(gameObject);
+        GemInventory.gemInventory.AddGem(this);
+        gameObject.SetActive(false);
     }
 }
