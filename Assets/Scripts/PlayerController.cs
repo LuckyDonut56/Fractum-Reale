@@ -120,7 +120,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, interactionDistance))
+            Transform cameraTransform = Camera.main.transform;
+            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, interactionDistance))
             {
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
