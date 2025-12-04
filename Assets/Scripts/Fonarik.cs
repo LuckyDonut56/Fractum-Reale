@@ -2,18 +2,31 @@ using UnityEngine;
 
 public class FlashlightSimple : MonoBehaviour
 {
+    public GameObject flashlight;
     public Light flashlightLight;  
     public KeyCode toggleKey = KeyCode.F;  
 
-    private bool isOn = false;  
-
+    private bool isOn = false;
+    void Start()
+    {
+        flashlight.SetActive(false);
+        flashlightLight.enabled = false;
+    }
     void Update()
-    {       
-        if (Input.GetKeyDown(toggleKey))
+    {
+        if (Inventory.Instance.hasFlashlight)
         {
-            isOn = !isOn;
-            flashlightLight.enabled = isOn;           
+            if (!flashlight.activeSelf)
+            {
+                flashlight.SetActive(true);
+            }
+            if (Input.GetKeyDown(toggleKey))
+            {
+                isOn = !isOn;
+                flashlightLight.enabled = isOn;
+            }
         }
+
     }
 }
 
