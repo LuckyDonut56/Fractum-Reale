@@ -235,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8489716704570091541}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.483082, y: 0.516364, z: 0.5163641, w: 0.4830819}
+  m_LocalRotation: {x: -0.48307997, y: 0.51636595, z: 0.51636595, w: 0.48307997}
   m_LocalPosition: {x: -13.073379, y: 0.5704216, z: -1.6702665}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
@@ -243,7 +243,7 @@ Transform:
   - {fileID: 3794549980073954380}
   - {fileID: 4938080963470566789}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 93.815}
 --- !u!33 &9009786250778834543
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4429952748497185475, guid: 7d8fd5d035ea3e0479318d7a2a3689a4, type: 3}
 --- !u!114 &2198125310692327260
