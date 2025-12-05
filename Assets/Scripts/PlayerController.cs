@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
             Transform cameraTransform = Camera.main.transform;
             if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, interactionDistance))
             {
-                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+                foreach(var interactable in hit.collider.GetComponents<IInteractable>())
                 if (interactable != null)
                 {
                     interactable.Interact();
