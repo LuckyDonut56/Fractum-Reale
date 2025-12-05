@@ -698,6 +698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roty: 0
   speed: 90
+  isOpen: 0
 --- !u!65 &362712272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -965,6 +966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roty: 0
   speed: 90
+  isOpen: 0
 --- !u!65 &551416534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1049,6 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79e71976533b0d4b983371969891c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ttc: 1
 --- !u!65 &576488249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1224,7 +1227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5578708672567150231, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
       propertyPath: m_TagString
-      value: room 1
+      value: doorroom1
       objectReference: {fileID: 0}
     - target: {fileID: -5403980447961959050, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
       propertyPath: m_TagString
@@ -1628,6 +1631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roty: 0
   speed: 90
+  isOpen: 0
 --- !u!23 &623436838
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3639,6 +3643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roty: 0
   speed: 90
+  isOpen: 0
 --- !u!65 &1663639244
 BoxCollider:
   m_ObjectHideFlags: 0

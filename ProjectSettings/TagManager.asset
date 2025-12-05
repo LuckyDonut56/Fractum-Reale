@@ -6,6 +6,7 @@ TagManager:
   tags:
   - room 1
   - room 2
+  - doorroom1
   layers:
   - Default
   - TransparentFX
