@@ -2797,7 +2797,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3aaa36a21873f9a48bfe4f6620b9cddd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.4999998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3aaa36a21873f9a48bfe4f6620b9cddd, type: 3}
       propertyPath: m_LocalScale.y
@@ -2805,11 +2805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3aaa36a21873f9a48bfe4f6620b9cddd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 2.4999998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3aaa36a21873f9a48bfe4f6620b9cddd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.391
+      value: 0.45833346
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3aaa36a21873f9a48bfe4f6620b9cddd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2817,7 +2817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3aaa36a21873f9a48bfe4f6620b9cddd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.335
+      value: 0.32100004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3aaa36a21873f9a48bfe4f6620b9cddd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3317,7 +3317,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094412983}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 0}
 --- !u!4 &1094412990
 Transform:
   m_ObjectHideFlags: 0
@@ -3328,7 +3328,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.77, y: 1, z: -3.56}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 0.6, y: 0.75, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 83912237}
