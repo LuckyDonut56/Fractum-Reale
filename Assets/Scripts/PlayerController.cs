@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [Header("Mouse Look")]
     public float mouseSensitivity = 2f;
     public float maxLookAngle = 80f;
+    public float interactionDistance = 5f;
 
     [Header("Camera Bobbing")]
     public bool enableCameraBobbing = true;
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        
+
         cameraOriginalPosition = playerCamera.transform.localPosition;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleJump();
         HandleCameraBobbing();
+        Interaction();
     }
 
     void HandleMouseLook()
@@ -110,7 +112,23 @@ public class PlayerController : MonoBehaviour
         else
         {
             bobbingTimer = 0f;
-            playerCamera.transform.localPosition = Vector3.Lerp(playerCamera.transform.localPosition,cameraOriginalPosition,Time.deltaTime * bobbingSpeed);
+            playerCamera.transform.localPosition = Vector3.Lerp(playerCamera.transform.localPosition, cameraOriginalPosition, Time.deltaTime * bobbingSpeed);
+        }
+    }
+
+    void Interaction()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Transform cameraTransform = Camera.main.transform;
+            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hit, interactionDistance))
+            {
+                foreach(var interactable in hit.collider.GetComponents<IInteractable>())
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
         }
     }
 }
