@@ -7,6 +7,7 @@ TagManager:
   - room 1
   - room 2
   - doorroom1
+  - flashlight
   layers:
   - Default
   - TransparentFX
