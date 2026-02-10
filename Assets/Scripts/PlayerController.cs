@@ -1,39 +1,36 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float walkSpeed = 5f;
-    public float runSpeed = 10f;
-    public float jumpForce = 7f;
-    public float gravity = -9.81f;
+    [SerializeField] private float walkSpeed = 5f;
+    [SerializeField] private float runSpeed = 10f;
+    [SerializeField] private float jumpForce = 7f;
+    [SerializeField] private float gravity = -9.81f;
 
     [Header("Mouse Look")]
-    public float mouseSensitivity = 2f;
-    public float maxLookAngle = 80f;
-    public float interactionDistance = 5f;
+    [SerializeField] private float mouseSensitivity = 2f;
+    [SerializeField] private float maxLookAngle = 80f;
+    [SerializeField] private float interactionDistance = 5f;
 
     [Header("Camera Bobbing")]
     public bool enableCameraBobbing = true;
-    public float bobbingAmount = 0.05f;
-    public float bobbingSpeed = 0.18f;
+    [SerializeField] private float bobbingAmount = 0.05f;
+    [SerializeField] private float bobbingSpeed = 0.18f;
 
-    [Header("Components")]
-    public Camera playerCamera;
-
+    private Camera playerCamera;
     private CharacterController characterController;
     private Vector3 velocity;
+    private Vector3 cameraOriginalPosition;
     private bool isGrounded;
     private float xRotation = 0f;
-
     private float bobbingTimer = 0f;
-    private Vector3 cameraOriginalPosition;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        playerCamera = GetComponentInChildren<Camera>();
 
         cameraOriginalPosition = playerCamera.transform.localPosition;
 
@@ -76,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 moveDirection = transform.right * horizontal + transform.forward * vertical;
 
-        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) && isGrounded ? runSpeed : walkSpeed;
 
         characterController.Move(moveDirection * currentSpeed * Time.deltaTime);
 
