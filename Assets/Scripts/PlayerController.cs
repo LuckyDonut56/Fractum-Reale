@@ -15,9 +15,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float interactionDistance = 5f;
 
     [Header("Camera Bobbing")]
-    public bool enableCameraBobbing = true;
+    [SerializeField] private  bool enableCameraBobbing = true;
     [SerializeField] private float bobbingAmount = 0.05f;
     [SerializeField] private float bobbingSpeed = 0.18f;
+
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource stepsAudioSource;
+    [SerializeField] private AudioClip[] stepSounds;
+    [SerializeField] private float stepInterval = 0.5f;
+    [SerializeField] private float runStepInterval = 0.25f;
 
     private Camera playerCamera;
     private CharacterController characterController;
@@ -26,6 +32,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private float xRotation = 0f;
     private float bobbingTimer = 0f;
+    private float stepTimer = 0f;
+    private bool wasMoving = false;
 
     void Start()
     {
@@ -44,6 +52,7 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleJump();
         HandleCameraBobbing();
+        HandleStepSounds();
         Interaction();
     }
 
@@ -126,6 +135,47 @@ public class PlayerController : MonoBehaviour
                     interactable.Interact();
                 }
             }
+        }
+    }
+
+    void HandleStepSounds()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        bool isMoving = (Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f) && isGrounded;
+        bool isRunning = Input.GetKey(KeyCode.LeftShift) && isGrounded;
+
+        float currentInterval = isRunning ? runStepInterval : stepInterval;
+        if (isMoving && !wasMoving)
+        {
+            PlayStepSound();
+            stepTimer = 0f;
+        }
+        else if (isMoving)
+        {
+            stepTimer += Time.deltaTime;
+            if (stepTimer >= currentInterval)
+            {
+                PlayStepSound();
+                stepTimer = 0f;
+            }
+        }
+        else
+            stepTimer = 0f;
+        wasMoving = isMoving;
+    }
+
+
+    void PlayStepSound()
+    {
+        int randomIndex = Random.Range(0, stepSounds.Length);
+        AudioClip selectedClip = stepSounds[randomIndex];
+
+        if (selectedClip != null && stepsAudioSource != null)
+        {
+            stepsAudioSource.clip = selectedClip;
+            stepsAudioSource.time = 0f;
+            stepsAudioSource.Play();
         }
     }
 }
