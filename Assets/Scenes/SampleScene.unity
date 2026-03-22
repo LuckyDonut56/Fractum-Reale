@@ -2241,6 +2241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneB
       objectReference: {fileID: 0}
+    - target: {fileID: 6832043615068884748, guid: 002ff21684ad0aa44aac2ae3e48bcfd2, type: 3}
+      propertyPath: gemPickUpSound
+      value: 
+      objectReference: {fileID: 1770970769}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2970,6 +2974,7 @@ Transform:
   - {fileID: 389890609}
   - {fileID: 1894773489}
   - {fileID: 1309482930}
+  - {fileID: 1770970768}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763626575
@@ -3445,6 +3450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7ffa9da85b7e44693dd8302dc92132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpSound: {fileID: 1770970769}
 --- !u!65 &927771626
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3609,6 +3615,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 660769807}
     m_Modifications:
+    - target: {fileID: -3854131298690148845, guid: 60d03612393886e4bb8ee7d515470810, type: 3}
+      propertyPath: gemPickUpSound
+      value: 
+      objectReference: {fileID: 1770970769}
     - target: {fileID: 3412521328851390534, guid: 60d03612393886e4bb8ee7d515470810, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.0653987
@@ -4193,6 +4203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7ffa9da85b7e44693dd8302dc92132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpSound: {fileID: 1770970769}
 --- !u!65 &1179045123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4332,6 +4343,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 660769807}
     m_Modifications:
+    - target: {fileID: -4510958833246481431, guid: b18025080d6fe4d42a6b6b4e9bc92dc4, type: 3}
+      propertyPath: gemPickUpSound
+      value: 
+      objectReference: {fileID: 1770970769}
     - target: {fileID: 563889469743067258, guid: b18025080d6fe4d42a6b6b4e9bc92dc4, type: 3}
       propertyPath: m_Name
       value: StoneG
@@ -6802,6 +6817,135 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000655, y: 0.002353}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1770970767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1770970768}
+  - component: {fileID: 1770970769}
+  m_Layer: 0
+  m_Name: Pick up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1770970768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770970767}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.6744, y: -5.3335533, z: -0.29200095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 728613460}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1770970769
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770970767}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 9317210f94b90d347bd163d3e9e6007f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1796784867
 GameObject:
   m_ObjectHideFlags: 0
@@ -7844,6 +7988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a7ffa9da85b7e44693dd8302dc92132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpSound: {fileID: 1770970769}
 --- !u!65 &2076947503
 BoxCollider:
   m_ObjectHideFlags: 0
