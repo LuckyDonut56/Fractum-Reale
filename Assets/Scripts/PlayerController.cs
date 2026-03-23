@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         fall = audsrcs[1];
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Time.timeScale = 1;
     }
 
     void Update()
