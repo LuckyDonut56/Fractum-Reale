@@ -920,11 +920,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &149457880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5231362815219648064, guid: 3aaa36a21873f9a48bfe4f6620b9cddd, type: 3}
-  m_PrefabInstance: {fileID: 806655701}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &150156294
 GameObject:
   m_ObjectHideFlags: 0
@@ -3123,6 +3118,10 @@ PrefabInstance:
       value: room 1
       objectReference: {fileID: 0}
     - target: {fileID: -5578708672567150231, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5578708672567150231, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
       propertyPath: m_TagString
       value: doorroom1
       objectReference: {fileID: 0}
@@ -3353,18 +3352,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -2932998491564163895, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
+    - {fileID: 4748009765878916660, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
-      insertIndex: 58
+      insertIndex: 57
       addedObject: {fileID: 814996234}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
-      insertIndex: 60
+      insertIndex: 59
       addedObject: {fileID: 1992983747}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
-      insertIndex: 63
+      insertIndex: 62
       addedObject: {fileID: 272234161}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
-      insertIndex: 64
+      insertIndex: 63
       addedObject: {fileID: 641710898}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d27101ce645b2ab419b51ea01834b5c1, type: 3}
       insertIndex: -1
@@ -8884,7 +8884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f2e493472df114bb08e4105eccb42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 149457880}
+  flashlight: {fileID: 1796784867}
   UVflashlight: {fileID: 605429378}
   state: 0
   toggleKey: 102
@@ -10893,7 +10893,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796784867}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 0.9105852, b: 0.6273585, a: 1}
