@@ -6,6 +6,7 @@ using static Gem;
 public class SkullPuzzle : MonoBehaviour, IInteractable
 {
     public GameObject gemPrefab;
+    public AudioSource skullSound;
     public GemColor requiredColor;
     public int solutionDigit;
 
@@ -28,7 +29,7 @@ public class SkullPuzzle : MonoBehaviour, IInteractable
             return;
         }
         
-        if (GemInventory.gemInventory.HasGem(requiredColor))
+        if (GemInventory.gemInventory.HasGem(requiredColor) && !isSolved)
         {
             GemInventory.gemInventory.RemoveGem(requiredColor);
             Instantiate(gemPrefab, gemSlot.position, gemSlot.rotation);
@@ -49,6 +50,7 @@ public class SkullPuzzle : MonoBehaviour, IInteractable
 
     private IEnumerator AnimateDigit()
     {
+        skullSound.Play();
         float duration = 2f;
         float timer = 0;
 
@@ -62,7 +64,6 @@ public class SkullPuzzle : MonoBehaviour, IInteractable
         
         timer = 0;
         yield return new WaitForSeconds(1f);
-
         while (timer < duration)
         {
             digitDisplay.alpha = Mathf.Lerp(1, 0, timer / duration);
