@@ -10,7 +10,7 @@ public class UVScript : MonoBehaviour
     {
         if (mat && spotLight && flashlight)
         {
-            if (flashlight.state == global::light.UV)
+            if (Inventory.Instance.hasUVFlashlight && flashlight.state == global::light.UV)
             {
                 mat.SetVector("_LightPosition", spotLight.transform.position);
                 mat.SetVector("_LightDirection", -spotLight.transform.forward);

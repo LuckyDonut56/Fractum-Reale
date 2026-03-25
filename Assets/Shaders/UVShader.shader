@@ -2,14 +2,14 @@ Shader "UVShader"
 {
     Properties
     {
-        _BaseColor("Color", Color) = (1,1,1,1)
         _BaseMap("Albedo (RGB)", 2D) = "white" {}
-        _Smoothness("Smoothness", Range(0,1)) = 0.5
-        _Metallic("Metallic", Range(0,1)) = 0.0
-        _LightDirection("Light Direction", Vector) = (0,0,1,0)
+        _BaseColor("Color", Color) = (1,1,1,1)
         _LightPosition("Light Position", Vector) = (0,0,0,0)
+        _LightDirection("Light Direction", Vector) = (0,0,1,0)
         _LightAngle("Light Angle", Range(0,180)) = 45
         _StrengthScalor("Strength", Float) = 50
+        _GlowColor("Glow Color", Color) = (0.6, 0, 1, 1)
+        _GlowIntensity("Glow Intensity", Range(0, 2)) = 1.0
     }
 
     SubShader
@@ -56,12 +56,12 @@ Shader "UVShader"
             CBUFFER_START(UnityPerMaterial)
                 float4 _BaseMap_ST;
                 float4 _BaseColor;
-                float _Smoothness;
-                float _Metallic;
                 float3 _LightPosition;
                 float3 _LightDirection;
                 float _LightAngle;
                 float _StrengthScalor;
+                float4 _GlowColor;
+                float _GlowIntensity;
             CBUFFER_END
 
             Varyings vert(Attributes IN)
@@ -77,16 +77,18 @@ Shader "UVShader"
             {
                 float3 lightDir = normalize(_LightPosition - IN.positionWS);
                 float scale = dot(lightDir, normalize(_LightDirection));
-
                 float halfAngleRad = radians(_LightAngle) * 0.5;
                 float threshold = cos(halfAngleRad);
                 float strength = scale - threshold;
                 strength = saturate(strength * _StrengthScalor);
 
-                half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, IN.uv) * _BaseColor;
-                color.a *= strength;
+                half4 albedo = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, IN.uv) * _BaseColor;
+                half4 glow = _GlowColor * _GlowIntensity;
 
-                return color;
+                half4 finalColor = albedo * glow * strength;
+                finalColor.a = albedo.a * strength;
+
+                return finalColor;
             }
             ENDHLSL
         }
