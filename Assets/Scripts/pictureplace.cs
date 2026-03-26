@@ -4,7 +4,7 @@ public class pictureplace : MonoBehaviour, IInteractable
 {
     public void Interact()
     {
-        if (this.transform.childCount == 0)
+        if (this.transform.childCount == 2)
         {
             foreach (var x in Inventory.Instance.inventory)
             {
@@ -12,7 +12,7 @@ public class pictureplace : MonoBehaviour, IInteractable
                 {
                     x.transform.parent = this.transform;
                     x.SetActive(true);
-                    x.GetComponent<Transform>().localPosition = new Vector3(0.0044f, 0f, 0f);
+                    x.transform.position = gameObject.transform.Find("Pivot").position;
                     if (x.name == "Picture1") x.GetComponent<Transform>().rotation = Quaternion.Euler(-90, 0, 0);
                     else x.GetComponent<Transform>().rotation = Quaternion.Euler(-90, 0, 180);
                     Inventory.Instance.RemoveObject(x);
