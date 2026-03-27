@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: room3_1 Variant 11
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 3370141902729061649, guid: b92d9eb2929105b4e8a2e11fb7baa4be, type: 3}
+  m_Parent: {fileID: 2100000, guid: f5dded224ae437f4fadcf19a43323ee6, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -51,6 +51,6 @@ Material:
     - _Metallic: 0
     - _Smoothness: 0
     m_Colors:
-    - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
+    - _Color: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
