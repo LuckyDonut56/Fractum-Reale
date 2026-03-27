@@ -28,6 +28,7 @@ public class FlashlightSimple : MonoBehaviour
                         flashlight.SetActive(true);
                     }
                 }
+                else state += 1;
                 break;
             case global::light.UV:
                 flashlight.SetActive(false);
@@ -38,13 +39,14 @@ public class FlashlightSimple : MonoBehaviour
                         UVflashlight.SetActive(true);
                     }
                 }
+                else state += 1;
+                break;
+            default: state = 0;
                 break;
         }
         if (Input.GetKeyDown(toggleKey))
         {
-            if (state != global::light.UV)
             state+=1;
-            else state=0;
         }
 
     }

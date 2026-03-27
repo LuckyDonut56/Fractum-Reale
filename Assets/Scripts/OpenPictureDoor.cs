@@ -15,7 +15,7 @@ public class OpenPictureDoor : MonoBehaviour, IInteractable
   
     bool IsSolvePuzzle()
     {
-        if (picture1.IsChildOf(smallColumn) && picture2.IsChildOf(mediumColumn) && picture3.IsChildOf(bigColumn))
+        if (picture1.IsChildOf(smallColumn) && picture3.IsChildOf(mediumColumn) && picture2.IsChildOf(bigColumn))
             if (Mathf.Round(picture1.localEulerAngles.x) == rot1 && Mathf.Round(picture2.localEulerAngles.x) == rot2 && Mathf.Round(picture3.localEulerAngles.x) == rot3)
                 return true;
         return false;
