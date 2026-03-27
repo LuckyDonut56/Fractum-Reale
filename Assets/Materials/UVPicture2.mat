@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7358486577944501793
+--- !u!114 &-7122550300978750736
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UVMaterial
+  m_Name: UVPicture2
   m_Shader: {fileID: 4800000, guid: 84484513c4e7c284d81e280b5c6c4dba, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2726891fbf83c744e9918c0443ad3695, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -113,8 +113,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GlowIntensity: 1
-    - _LightAngle: 0
+    - _GlowIntensity: 2
+    - _LightAngle: 80.48706
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -133,9 +133,9 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GlowColor: {r: 0.5, g: 0, b: 1, a: 1}
-    - _LightDirection: {r: -0.9753877, g: 0.20107774, b: 0.090482876, a: 0}
-    - _LightPosition: {r: 0.7574992, g: 1.3531365, b: -3.1562898, a: 0}
+    - _GlowColor: {r: 0.6, g: 0, b: 1, a: 1}
+    - _LightDirection: {r: -0.4476203, g: 0.18566827, b: -0.8747362, a: 0}
+    - _LightPosition: {r: 7.0502443, g: 1.3600464, b: -24.776857, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
