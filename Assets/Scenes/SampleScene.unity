@@ -8538,6 +8538,7 @@ MonoBehaviour:
   crosshair: {fileID: 374306809}
   doorOpenSound: {fileID: 8300000, guid: f385b072f3738734086d4785aa8c80ac, type: 3}
   incorrectCodSound: {fileID: 8300000, guid: 1e7c76c00a03b35428d458669cee93cd, type: 3}
+  PlayerController: {fileID: 1094412984}
   roty: 0
   speed: 90
 --- !u!65 &1204416854
