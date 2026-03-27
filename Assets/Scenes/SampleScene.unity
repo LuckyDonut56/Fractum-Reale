@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PausePanel: {fileID: 1084456183}
+  SafeCamera: {fileID: 278818173}
   PlayerController: {fileID: 1094412984}
 --- !u!4 &53710729
 Transform:

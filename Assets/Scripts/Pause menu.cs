@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class Pausemenu : MonoBehaviour
 {
     public GameObject PausePanel;
+    public GameObject SafeCamera;
     public PlayerController PlayerController;
     public void ContinueButton()
     {
@@ -21,7 +22,7 @@ public class Pausemenu : MonoBehaviour
     }
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)&& SafeCamera.activeSelf == false)
         {
             pause();
         }
