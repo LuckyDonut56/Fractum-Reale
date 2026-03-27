@@ -11,7 +11,11 @@ public class Safe : MonoBehaviour, IInteractable
     public Camera safeCamera;
 
     public GameObject crosshair;
+    private AudioSource safeSound;
+    public AudioClip doorOpenSound;
+    public AudioClip incorrectCodSound;
 
+    public PlayerController PlayerController;
     public float roty = 0f;
     public float speed = 90f;
 
@@ -24,6 +28,7 @@ public class Safe : MonoBehaviour, IInteractable
     private bool isOpen;
     void Start()
     {
+        safeSound = GetComponent<AudioSource>();
         roty = transform.localRotation.eulerAngles.y;
     }
 
@@ -44,10 +49,18 @@ public class Safe : MonoBehaviour, IInteractable
         if (isActive && Input.GetKeyDown(KeyCode.Escape))
         {
             ExitSafeView();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1;
+            PlayerController.enabled = true;
         }
         if (isSolved && !isOpen)
         {
             Debug.Log("Opening");
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1;
+            PlayerController.enabled = true;
             Open();
         }
     }
@@ -58,7 +71,7 @@ public class Safe : MonoBehaviour, IInteractable
         {
             return;
         }
-
+        PlayerController.enabled = false;
         isActive = true;
 
         playerCamera.gameObject.SetActive(false);
@@ -93,6 +106,7 @@ public class Safe : MonoBehaviour, IInteractable
     {
         if (entered == code)
         {
+            safeSound.PlayOneShot(doorOpenSound);
             Debug.Log("Correct");
             isSolved = true;
             ExitSafeView();
@@ -100,6 +114,7 @@ public class Safe : MonoBehaviour, IInteractable
         }
         else
         {
+            safeSound.PlayOneShot(incorrectCodSound);
             entered = "";
             foreach (var s in digits)
                 s.text = "";
@@ -134,6 +149,7 @@ public class Safe : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(0.5f);
         CheckCode();
         isChecking = false;
+        yield return new WaitForSeconds(0.5f);
     }
 
     public void Open()

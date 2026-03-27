@@ -10,7 +10,7 @@ Material:
   m_Name: room3_1 Variant 3
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 6278467140953041797, guid: b92d9eb2929105b4e8a2e11fb7baa4be, type: 3}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 2
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -27,9 +27,12 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Metallic: 1
+    - _Metallic: 0.919
+    - _Smoothness: 1
+    - _WorkflowMode: 1
     m_Colors:
-    - _Color: {r: 0.906019, g: 0.906019, b: 0.906019, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &2604254974547866081

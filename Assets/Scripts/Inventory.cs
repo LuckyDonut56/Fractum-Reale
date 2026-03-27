@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     public List<GameObject> inventory = new();
 
     public bool hasFlashlight = false;
+    public bool hasUVFlashlight = false;
     void Awake()
     {
         if (Instance == null)
@@ -22,6 +23,8 @@ public class Inventory : MonoBehaviour
 
         if (obj.name == "flashlightPickable")
             hasFlashlight = true;
+        if (obj.name == "UVflashlightPickable")
+            hasUVFlashlight = true;
     }
 
     public void RemoveObject(GameObject obj)

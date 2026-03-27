@@ -15,8 +15,12 @@ public class roomchange : MonoBehaviour
     }
     IEnumerator OnTriggerEnter()
     {
-        GameObject.FindGameObjectWithTag("doorroom1").GetComponent<Door>().speed = 360;
-        GameObject.FindGameObjectWithTag("doorroom1").GetComponent<Door>().isOpen = false;
+        if (Inventory.Instance.hasFlashlight) { 
+        var closedDoor = GameObject.FindGameObjectWithTag("doorroom1").GetComponent<Door>();
+        closedDoor.speed = 360;
+        if (closedDoor.isOpen)
+            closedDoor.doorClose.PlayDelayed(0.1f);
+        closedDoor.isOpen = false;
         yield return new WaitForSeconds(0.1f);
         foreach (var x in GameObject.FindGameObjectsWithTag("room 1"))
         {
@@ -28,6 +32,7 @@ public class roomchange : MonoBehaviour
             x.GetComponent<Transform>().localPosition = Vector3.zero;
         }
         gameObject.SetActive(false);
+    }
     }
 
     void OnTriggerEnter(Collider other)
