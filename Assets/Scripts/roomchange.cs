@@ -15,6 +15,7 @@ public class roomchange : MonoBehaviour
     }
     IEnumerator OnTriggerEnter()
     {
+        if (Inventory.Instance.hasFlashlight) { 
         var closedDoor = GameObject.FindGameObjectWithTag("doorroom1").GetComponent<Door>();
         closedDoor.speed = 360;
         if (closedDoor.isOpen)
@@ -31,6 +32,7 @@ public class roomchange : MonoBehaviour
             x.GetComponent<Transform>().localPosition = Vector3.zero;
         }
         gameObject.SetActive(false);
+    }
     }
 
     void OnTriggerEnter(Collider other)
