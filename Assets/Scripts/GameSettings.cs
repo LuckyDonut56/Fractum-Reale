@@ -31,7 +31,7 @@ public class GameSettings : MonoBehaviour
 
     public void SetMouseSensitivity(float value)
     {
-        mouseSensitivity = Mathf.Clamp(value, 0.1f, 10f);
+        mouseSensitivity = Mathf.Clamp(value, 0.1f, 5f);
         PlayerPrefs.SetFloat("mouseSensitivity", mouseSensitivity);
     }
 
