@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 514635404}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: FPSButton
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1497,7 +1497,7 @@ GameObject:
   - component: {fileID: 1020829967}
   m_Layer: 5
   m_Name: fps60
-  m_TagString: Untagged
+  m_TagString: FPSButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1520,7 +1520,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -6.8, y: -27.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 73, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020829967
 MonoBehaviour:
@@ -1565,19 +1565,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1020829968}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1270993288}
-        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
-        m_MethodName: Set60
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1020829968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,7 +1618,7 @@ GameObject:
   - component: {fileID: 1037244638}
   m_Layer: 5
   m_Name: fps120
-  m_TagString: Untagged
+  m_TagString: FPSButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1653,7 +1641,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 4.9, y: -27.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 98, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1037244638
 MonoBehaviour:
@@ -1698,19 +1686,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1037244639}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1270993288}
-        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
-        m_MethodName: Set120
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1037244639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1971,7 +1947,7 @@ GameObject:
   - component: {fileID: 1155110115}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: FPSButton
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2107,7 +2083,7 @@ GameObject:
   - component: {fileID: 1177612556}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: FPSButton
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2440,7 +2416,7 @@ GameObject:
   - component: {fileID: 1250300557}
   m_Layer: 5
   m_Name: fps240
-  m_TagString: Untagged
+  m_TagString: FPSButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2463,7 +2439,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 19.1, y: -27.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 110, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250300557
 MonoBehaviour:
@@ -2508,19 +2484,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1250300558}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1270993288}
-        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
-        m_MethodName: Set240
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1250300558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2591,7 +2555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1821169830}
   sensitivitySlider: {fileID: 1729163779}
-  buttons:
+  fpsButtonTexts:
   - {fileID: 1155110115}
   - {fileID: 1177612556}
   - {fileID: 1562688430}
@@ -2786,7 +2750,7 @@ GameObject:
   - component: {fileID: 1562688430}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: FPSButton
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3025,7 +2989,7 @@ GameObject:
   - component: {fileID: 1642688864}
   m_Layer: 5
   m_Name: fps30
-  m_TagString: Untagged
+  m_TagString: FPSButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3048,7 +3012,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -17.6, y: -27.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 73, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642688864
 MonoBehaviour:
@@ -3093,19 +3057,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1642688865}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1270993288}
-        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
-        m_MethodName: Set30
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1642688865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3267,19 +3219,7 @@ MonoBehaviour:
   m_Value: 0.1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1270993289}
-        m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
-        m_MethodName: SetMouseSensitivity
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1737955295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,19 +3481,7 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1270993289}
-        m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
-        m_MethodName: SetVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1834265385
 GameObject:
   m_ObjectHideFlags: 0

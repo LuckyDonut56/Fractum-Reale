@@ -28,6 +28,7 @@ public class Menu : MonoBehaviour
     {
         mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
+        settings.RebindUI();
         settings.InitSettingsUI();
     }
 

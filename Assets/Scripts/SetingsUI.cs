@@ -1,67 +1,132 @@
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingsUI : MonoBehaviour
 {
     public Slider volumeSlider;
     public Slider sensitivitySlider;
-    public TextMeshProUGUI[] buttons;
+    public TextMeshProUGUI[] fpsButtonTexts;
+    private UnityEngine.UI.Button[] fpsButtons;
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        RebindUI();
+        InitSettingsUI();
+        SubscribeEvents();
+    }
+
     public void InitSettingsUI()
     {
-        sensitivitySlider.value = GameSettings.Instance.mouseSensitivity;
-        volumeSlider.value = GameSettings.Instance.volume;
+        if (GameSettings.Instance == null) return;
 
-        int fps = GameSettings.Instance.targetFPS;
-        
+        if (sensitivitySlider != null)
+            sensitivitySlider.SetValueWithoutNotify(GameSettings.Instance.mouseSensitivity);
+        if (volumeSlider != null)
+            volumeSlider.SetValueWithoutNotify(GameSettings.Instance.volume);
+
+        int currentFPS = GameSettings.Instance.targetFPS;
+        HighlightButton(currentFPS);
     }
 
-    public void Set30()
+    public void RebindUI()
     {
-        GameSettings.Instance.SetFPS(30);
-        Select(0);
-        
-    }
-    public void Set60()
-    {
-        GameSettings.Instance.SetFPS(60);
-        Select(1);
-
-    }
-    public void Set120()
-    {
-        GameSettings.Instance.SetFPS(120);
-        Select(2);
-
-    }
-    public void Set240()
-    {
-        GameSettings.Instance.SetFPS(240);
-        Select(3);
-
-    }
-    public void Select(int idx)
-    {
-        buttons[idx].color = new Color(0.4196f, 0f, 0f);
-        for (int i = 0; i < buttons.Length; i++)
+        Slider[] allSliders = Resources.FindObjectsOfTypeAll<Slider>();
+        volumeSlider = null;
+        sensitivitySlider = null;
+        foreach (var slider in allSliders)
         {
-            if (i != idx)
+            if (slider.CompareTag("VolumeSlider")) volumeSlider = slider;
+            if (slider.CompareTag("SensitivitySlider")) sensitivitySlider = slider;
+        }
+
+        UnityEngine.UI.Button[] allButtons = Resources.FindObjectsOfTypeAll<UnityEngine.UI.Button>();
+        var buttonList = new System.Collections.Generic.List<UnityEngine.UI.Button>();
+        foreach (var button in allButtons)
+        {
+            if (button.CompareTag("FPSButton"))
+                buttonList.Add(button);
+        }
+
+        fpsButtons = buttonList.ToArray();
+        fpsButtonTexts = new TextMeshProUGUI[fpsButtons.Length];
+        for (int i = 0; i < fpsButtons.Length; i++)
+        {
+            fpsButtonTexts[i] = fpsButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+        }
+    }
+
+    private void SubscribeEvents()
+    {
+        UnsubscribeEvents();
+
+        volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
+        sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
+
+        for (int i = 0; i < fpsButtons.Length; i++)
+        {
+            int index = i;
+            fpsButtons[i].onClick.AddListener(() => OnFPSButtonClicked(index));
+        }
+    }
+
+    private void UnsubscribeEvents()
+    {
+        volumeSlider.onValueChanged.RemoveAllListeners();
+        sensitivitySlider.onValueChanged.RemoveAllListeners();
+
+        foreach (var button in fpsButtons)
+            button.onClick.RemoveAllListeners();
+    }
+
+    private void OnVolumeChanged(float value)
+    {
+        GameSettings.Instance.SetVolume(value);
+    }
+
+    private void OnSensitivityChanged(float value)
+    {
+        GameSettings.Instance.SetMouseSensitivity(value);
+    }
+
+    private void OnFPSButtonClicked(int index)
+    {
+        string fpsText = fpsButtonTexts[index].text;
+        if (int.TryParse(fpsText, out int fps))
+        {
+            GameSettings.Instance.SetFPS(fps);
+            HighlightButton(fps);
+        }
+    }
+
+    private void HighlightButton(int fps)
+    {
+        for (int i = 0; i < fpsButtonTexts.Length; i++)
+        {
+            if (fpsButtonTexts[i] != null && int.TryParse(fpsButtonTexts[i].text, out int btnFps))
             {
-                buttons[i].color = Color.black;
+                if (btnFps == fps)
+                {
+                    fpsButtonTexts[i].color = new Color(0.4196f, 0f, 0f);
+                }
+                else
+                {
+                    fpsButtonTexts[i].color = Color.black;
+                }
             }
         }
     }
-    private void OnLevelWasLoaded(int level)
-    {
-        volumeSlider = GameObject.FindWithTag("VolumeSlider").GetComponent<Slider>();
-        sensitivitySlider = GameObject.FindWithTag("SensitivitySlider").GetComponent<Slider>();
 
-        GameObject[] FPSButtons = GameObject.FindGameObjectsWithTag("FPSButton");
-        for (int i = 0; i < 4; ++i)
-        {
-            buttons[i] = FPSButtons[i].GetComponent<TextMeshProUGUI>();
-        }
-    }
 }
 
