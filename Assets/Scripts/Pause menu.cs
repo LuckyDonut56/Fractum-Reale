@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class Pausemenu : MonoBehaviour
 {
     public GameObject PausePanel;
+    public GameObject settingsPanel;
+    public GameObject background;
     public GameObject SafeCamera;
     public PlayerController PlayerController;
     public void ContinueButton()
@@ -20,13 +22,39 @@ public class Pausemenu : MonoBehaviour
         PlayerController.enabled = true;
         Time.timeScale = 1;
     }
-    public void Update()
+    public void OpenSettings()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)&& SafeCamera.activeSelf == false)
+        PausePanel.SetActive(false);
+        settingsPanel.SetActive(true);
+        background.SetActive(true);
+        SettingsUI settingsUI = FindFirstObjectByType<SettingsUI>();
+        if (settingsUI != null) settingsUI.RefreshUI();
+    }
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false);
+        background.SetActive(false);
+        PausePanel.SetActive(true);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pause();
+            if (settingsPanel.activeSelf)
+            {
+                CloseSettings();
+            }
+            else if (!PausePanel.activeSelf && SafeCamera.activeSelf == false)
+            {
+                pause();
+            }
+            else if (PausePanel.activeSelf)
+            {
+                ContinueButton();
+            }
         }
     }
+    
     public void pause()
     {
         Time.timeScale = 0;

@@ -22,6 +22,11 @@ public class SettingsUI : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        RefreshUI();
+    }
+
+    public void RefreshUI()
+    {
         RebindUI();
         InitSettingsUI();
         SubscribeEvents();

@@ -10,6 +10,12 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        GameObject prefab = Resources.Load<GameObject>("Settings");
+        if (prefab != null )
+        {
+            settings = prefab.GetComponent<SettingsUI>();
+        }
+
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
     }

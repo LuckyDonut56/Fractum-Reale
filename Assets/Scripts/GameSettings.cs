@@ -8,6 +8,19 @@ public class GameSettings : MonoBehaviour
     public float volume = 1f;
     public int targetFPS = 60;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void CreateInstance()
+    {
+        if (Instance != null) return;
+
+        GameObject prefab = Resources.Load<GameObject>("Settings");
+        if (prefab != null)
+        {
+            GameObject obj = Instantiate(prefab);
+            DontDestroyOnLoad(obj);
+        }
+    }
+
     private void Awake()
     {
         if (Instance == null)
