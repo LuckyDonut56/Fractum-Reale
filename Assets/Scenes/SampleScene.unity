@@ -405,6 +405,7 @@ MonoBehaviour:
   PausePanel: {fileID: 1084456183}
   settingsPanel: {fileID: 2072399995}
   background: {fileID: 177132726}
+  crosshair: {fileID: 374306809}
   SafeCamera: {fileID: 278818173}
   PlayerController: {fileID: 1094412984}
 --- !u!4 &53710729
@@ -14807,7 +14808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1833524023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16648,7 +16649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &2088699649
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -16709,6 +16710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 1094412984}
   _playerUICanvas: {fileID: 2072432838}
+  _introCanvas: {fileID: 1833524022}
 --- !u!114 &2088699652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24075,5 +24077,5 @@ SceneRoots:
   - {fileID: 1084456187}
   - {fileID: 2088699650}
   - {fileID: 976643991}
-  - {fileID: 1833524026}
   - {fileID: 991851830}
+  - {fileID: 1833524026}
