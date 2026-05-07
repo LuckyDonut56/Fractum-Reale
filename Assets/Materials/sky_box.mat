@@ -123,7 +123,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _AtmosphereThickness: 0.3
+    - _AtmosphereThickness: 5
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -136,7 +136,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _Exposure: 0.5
+    - _Exposure: 0
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -152,7 +152,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _SunDisk: 2
     - _SunSize: 0
-    - _SunSizeConvergence: 5
+    - _SunSizeConvergence: 2.17
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
