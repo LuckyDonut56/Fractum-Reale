@@ -28,9 +28,6 @@ public class PlayerController : MonoBehaviour
 
     private Camera playerCamera;
     private CharacterController characterController;
-    private AudioSource[] audsrcs;
-    private AudioSource step;
-    private AudioSource fall;
     private Vector3 velocity;
     private Vector3 cameraOriginalPosition;
     private bool isGrounded;
@@ -43,10 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         playerCamera = GetComponentInChildren<Camera>();
-        audsrcs = GetComponents<AudioSource>();
         cameraOriginalPosition = playerCamera.transform.localPosition;
-        step = audsrcs[0];
-        fall = audsrcs[1];
         Time.timeScale = 1;
     }
 
@@ -79,7 +73,6 @@ public class PlayerController : MonoBehaviour
         bool playfall = false;
         if (!isGrounded) playfall = true;
         isGrounded = characterController.isGrounded;
-        if (isGrounded && playfall) fall.Play();
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -96,11 +89,6 @@ public class PlayerController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
-        if (isGrounded && (horizontal != 0 || vertical != 0)) {
-            if (!step.isPlaying)
-                step.Play();
-                step.loop = true;
-        } else step.loop = false;
     }
 
     void HandleJump()
