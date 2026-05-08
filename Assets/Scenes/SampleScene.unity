@@ -1152,15 +1152,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1582190734b6ca45a61c623e5d5a070, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.06
+      value: -6.0599995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1582190734b6ca45a61c623e5d5a070, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1582190734b6ca45a61c623e5d5a070, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1582190734b6ca45a61c623e5d5a070, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1168,7 +1168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1582190734b6ca45a61c623e5d5a070, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e1582190734b6ca45a61c623e5d5a070, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3950,6 +3950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0106441e4890147b4997e5daecb641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  room4: {fileID: 543450652723576956}
   _playerController: {fileID: 1094412984}
   _playerUICanvas: {fileID: 2072432838}
   _introCanvas: {fileID: 1833524022}
@@ -3966,12 +3967,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360900849}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.13, y: 1.133, z: -32.614}
+  m_LocalRotation: {x: -0, y: 0.7071065, z: -0, w: 0.7071071}
+  m_LocalPosition: {x: -16.871, y: 1.133, z: -12.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 543450652723576956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &360900852
 BoxCollider:
@@ -18515,6 +18516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 360900851}
   - {fileID: 1427029698980061103}
   - {fileID: 166360581360376576}
   - {fileID: 3446952359061086394}
@@ -27863,6 +27865,5 @@ SceneRoots:
   - {fileID: 2088699650}
   - {fileID: 991851830}
   - {fileID: 1833524026}
-  - {fileID: 94373856}
   - {fileID: 555073684}
-  - {fileID: 360900851}
+  - {fileID: 94373856}

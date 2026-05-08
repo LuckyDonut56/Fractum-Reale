@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class CutsceneManager : MonoBehaviour
 {
+
+    [SerializeField] private Transform room4;
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private GameObject _playerUICanvas;
     [SerializeField] private GameObject _introCanvas;
@@ -18,7 +20,10 @@ public class CutsceneManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (isOpen && other.CompareTag("Player"))
+        {
+            room4.localPosition = new Vector3(-7.53599977f, 0, -26.1599998f);
             _cutscene.Play();
+        }
     }
 
     public void StartCutscene()
