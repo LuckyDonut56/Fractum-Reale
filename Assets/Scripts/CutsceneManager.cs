@@ -56,6 +56,8 @@ public class CutsceneManager : MonoBehaviour
 
     public void ToMenu()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(0);
     }
 
