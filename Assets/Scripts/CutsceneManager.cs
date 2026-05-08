@@ -13,6 +13,9 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private GameObject _room4;
     [SerializeField] private FlashlightSimple fonarik;
     [SerializeField] private PlayableDirector _cutscene;
+    [SerializeField] private AudioSource outdoorSource;
+    [SerializeField] private AudioSource indoorSource;
+    [SerializeField] private GameObject sc;
 
     public bool isOpen;
 
@@ -22,6 +25,11 @@ public class CutsceneManager : MonoBehaviour
         if (isOpen && other.CompareTag("Player"))
         {
             room4.localPosition = new Vector3(-7.53599977f, 0, -26.1599998f);
+            sc.GetComponent<MusicCrossfadeZone>().enabled = false;
+            outdoorSource.volume = 0.1f;
+            indoorSource.volume = 0f;
+            indoorSource.Stop();
+            outdoorSource.Play();
             _cutscene.Play();
         }
     }
