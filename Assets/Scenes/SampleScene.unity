@@ -26150,11 +26150,11 @@ MonoBehaviour:
   playerCamera: {fileID: 83912234}
   tabletCamera: {fileID: 611738135}
   PlayerController: {fileID: 1094412984}
+  isActive: 0
   crosshair: {fileID: 1094412983}
   mOFF: {fileID: -6538127246219892754, guid: 46e93161e31fb484cadbfc8225d7b4cd, type: 3}
   mON: {fileID: -3908378074932435330, guid: 46e93161e31fb484cadbfc8225d7b4cd, type: 3}
   cm: {fileID: 360900850}
-  trig: {fileID: 7568175495929295308}
 --- !u!65 &7984627566785196443
 BoxCollider:
   m_ObjectHideFlags: 0
