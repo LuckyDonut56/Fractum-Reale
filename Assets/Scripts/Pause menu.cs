@@ -8,6 +8,7 @@ public class Pausemenu : MonoBehaviour
     public GameObject background;
     public GameObject crosshair;
     public GameObject SafeCamera;
+    public GameObject tabletCamera;
     public PlayerController PlayerController;
     public void ContinueButton()
     {
@@ -46,7 +47,7 @@ public class Pausemenu : MonoBehaviour
             {
                 CloseSettings();
             }
-            else if (!PausePanel.activeSelf && SafeCamera.activeSelf == false)
+            else if (!PausePanel.activeSelf && SafeCamera.activeSelf == false && tabletCamera.activeSelf == false)
             {
                 pause();
             }

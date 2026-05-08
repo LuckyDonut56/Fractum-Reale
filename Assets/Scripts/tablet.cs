@@ -1,0 +1,74 @@
+using System;
+using Unity.VisualScripting.Antlr3.Runtime;
+using UnityEngine;
+
+public class tablet : MonoBehaviour, IInteractable
+{
+    public int[] sol = new int[5]{2,3,2,1,2};
+    [SerializeField] int[] state = new int[5]{0,0,0,0,0};
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private Camera tabletCamera;
+    [SerializeField] private PlayerController PlayerController;
+    private bool isActive = false;
+    public GameObject crosshair;
+    [SerializeField] private Material mOFF;
+    [SerializeField] private Material mON;
+    void Start()
+    {
+        
+    }
+    void Update()
+    {
+        if (isActive && Input.GetMouseButtonDown(0))
+        {
+            Ray ray = tabletCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, 10f))
+            {
+                buttontablet button = hit.collider.GetComponent<buttontablet>();
+                if (button != null)
+                {
+                    button.Interact();
+                }
+            }
+        }
+        if (isActive && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Stop();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1;
+            PlayerController.enabled = true;
+        }
+       
+    }
+    public void Interact()
+    {
+        PlayerController.enabled = false;
+        isActive = true;
+        playerCamera.gameObject.SetActive(false);
+        tabletCamera.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        crosshair.gameObject.SetActive(false);
+        gameObject.GetComponent<Collider>().enabled = false;
+    }
+    void Stop()
+    {
+        isActive = false;
+        tabletCamera.gameObject.SetActive(false);
+        playerCamera.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        crosshair.gameObject.SetActive(true);
+        gameObject.GetComponent<Collider>().enabled = true;
+    }
+    public void pressed(int row, int col)
+    {
+        if (state[row-1] > 0 && state[row-1]  < 4)
+        {
+            GameObject.Find("TabletButton" + row + ".00" + state[row-1]).GetComponent<Renderer>().material = mOFF;
+        }
+        GameObject.Find("TabletButton" + row  + ".00" + col).GetComponent<Renderer>().material = mON;
+        state[row-1] = col;
+    }
+}
