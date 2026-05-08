@@ -12,7 +12,8 @@ public class tablet : MonoBehaviour, IInteractable
     private bool isActive = false;
     public GameObject crosshair;
     [SerializeField] private Material mOFF;
-    [SerializeField] private Material mON;
+    [SerializeField] private Material mON; 
+    [SerializeField] private CutsceneManager cm;
     void Start()
     {
         
@@ -39,7 +40,9 @@ public class tablet : MonoBehaviour, IInteractable
             Time.timeScale = 1;
             PlayerController.enabled = true;
         }
-       
+        if (isSolved()) cm.isOpen = true;
+        else cm.isOpen = false;
+
     }
     public void Interact()
     {
