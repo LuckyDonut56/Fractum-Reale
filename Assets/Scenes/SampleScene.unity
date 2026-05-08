@@ -895,7 +895,7 @@ Transform:
   m_GameObject: {fileID: 83912233}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0.199}
+  m_LocalPosition: {x: 0, y: 0.85, z: 0.199}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9895,7 +9895,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.047, y: 0.89, z: -5.12}
-  m_LocalScale: {x: 1, y: 0.95, z: 1}
+  m_LocalScale: {x: 1, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 83912237}
@@ -25499,6 +25499,8 @@ GameObject:
   - component: {fileID: 4879197646782132313}
   - component: {fileID: 7593455343850787350}
   - component: {fileID: 43519170}
+  - component: {fileID: 8874180794167573814}
+  - component: {fileID: 8874180794167573813}
   m_Layer: 0
   m_Name: WallsDamaged
   m_TagString: Untagged
@@ -27055,6 +27057,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652723576956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8874180794167573813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568175495929295308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726733636e457214c8e1e827629e7a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainAudioSource: {fileID: 1894773488}
+  outdoorMusic: {fileID: 8300000, guid: 7f10e0c6993ecd84ba0e8d360b03395f, type: 3}
+  indoorMusic: {fileID: 8300000, guid: 4edead9212b5f5c488f0176a3c75ce8a, type: 3}
+--- !u!65 &8874180794167573814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568175495929295308}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.148155, y: 5.87182, z: 2.738716}
+  m_Center: {x: -0.0000038146973, y: 0, z: 0}
 --- !u!23 &8876151558690879307
 MeshRenderer:
   m_ObjectHideFlags: 0

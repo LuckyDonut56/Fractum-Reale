@@ -1,21 +1,33 @@
 using System.Collections;
 using UnityEngine;
 
-public class CrossfadeZone : MonoBehaviour
+public class MusicCrossfadeZone : MonoBehaviour
 {
-    public AudioSource mainAudioSource;
-    public AudioClip outdoorMusic;
-    public AudioClip indoorMusic;
+    public AudioSource outdoorSource; 
+    public AudioSource indoorSource; 
+    public float fadeDuration = 5f;
+    private Coroutine activeFade = null;
 
-    private Coroutine currentSwitchCoroutine;
+    private void Start()
+    {
+        if (outdoorSource != null)
+        {
+            outdoorSource.volume = 0.1f;
+            if (!outdoorSource.isPlaying) outdoorSource.Play();
+        }
+        if (indoorSource != null)
+        {
+            indoorSource.volume = 0f;
+            indoorSource.Stop();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (currentSwitchCoroutine != null)
-                StopCoroutine(currentSwitchCoroutine);
-            currentSwitchCoroutine = StartCoroutine(SwitchMusic(indoorMusic));
+            if (activeFade != null) StopCoroutine(activeFade);
+            activeFade = StartCoroutine(CrossfadeToIndoor());
         }
     }
 
@@ -23,18 +35,62 @@ public class CrossfadeZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (currentSwitchCoroutine != null)
-                StopCoroutine(currentSwitchCoroutine);
-            currentSwitchCoroutine = StartCoroutine(SwitchMusic(outdoorMusic));
+            if (activeFade != null) StopCoroutine(activeFade);
+            activeFade = StartCoroutine(CrossfadeToOutdoor());
         }
     }
 
-    private IEnumerator SwitchMusic(AudioClip newClip)
+    private IEnumerator CrossfadeToIndoor()
     {
-        mainAudioSource.clip = newClip;
-        mainAudioSource.Play();
-        currentSwitchCoroutine = null;
-        yield break;
+        float elapsed = 0f;
 
+        if (!indoorSource.isPlaying)
+        {
+            indoorSource.volume = 0f;
+            indoorSource.Play();
+        }
+
+        while (elapsed < fadeDuration)
+        {
+            float t = elapsed / fadeDuration;
+            outdoorSource.volume = Mathf.Lerp(0.1f, 0f, t);
+            indoorSource.volume = Mathf.Lerp(0f, 0.1f, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        outdoorSource.volume = 0f;
+        indoorSource.volume = 0.1f;
+
+        if (outdoorSource.isPlaying) outdoorSource.Stop();
+
+        activeFade = null;
+    }
+
+    private IEnumerator CrossfadeToOutdoor()
+    {
+        float elapsed = 0f;
+
+        if (!outdoorSource.isPlaying)
+        {
+            outdoorSource.volume = 0f;
+            outdoorSource.Play();
+        }
+
+        while (elapsed < fadeDuration)
+        {
+            float t = elapsed / fadeDuration;
+            indoorSource.volume = Mathf.Lerp(0.1f, 0f, t);
+            outdoorSource.volume = Mathf.Lerp(0f, 0.1f, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        indoorSource.volume = 0f;
+        outdoorSource.volume = 0.1f;
+
+        if (indoorSource.isPlaying) indoorSource.Stop();
+
+        activeFade = null;
     }
 }
