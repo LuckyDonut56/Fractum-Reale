@@ -7,24 +7,17 @@ public class MusicCrossfadeZone : MonoBehaviour
     public AudioSource indoorSource; 
     public float fadeDuration = 5f;
     private Coroutine activeFade = null;
-
+    private bool b = false;
+    [SerializeField] private tablet trig;
     private void Start()
     {
-        if (outdoorSource != null)
-        {
-            outdoorSource.volume = 0.1f;
-            if (!outdoorSource.isPlaying) outdoorSource.Play();
-        }
-        if (indoorSource != null)
-        {
-            indoorSource.volume = 0f;
-            indoorSource.Stop();
-        }
+        if (trig.isActive) b = true;
+        else b = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && b)
         {
             if (activeFade != null) StopCoroutine(activeFade);
             activeFade = StartCoroutine(CrossfadeToIndoor());
@@ -33,7 +26,7 @@ public class MusicCrossfadeZone : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && b)
         {
             if (activeFade != null) StopCoroutine(activeFade);
             activeFade = StartCoroutine(CrossfadeToOutdoor());

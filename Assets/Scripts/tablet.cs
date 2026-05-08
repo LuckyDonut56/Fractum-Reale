@@ -9,11 +9,12 @@ public class tablet : MonoBehaviour, IInteractable
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Camera tabletCamera;
     [SerializeField] private PlayerController PlayerController;
-    private bool isActive = false;
+    public bool isActive = false;
     public GameObject crosshair;
     [SerializeField] private Material mOFF;
     [SerializeField] private Material mON; 
     [SerializeField] private CutsceneManager cm;
+    
     void Start()
     {
         
@@ -40,15 +41,15 @@ public class tablet : MonoBehaviour, IInteractable
             Time.timeScale = 1;
             PlayerController.enabled = true;
         }
-        if (isSolved()) cm.isOpen = true;
-        else cm.isOpen = false;
+            if (isSolved()) cm.isOpen = true;
+            else cm.isOpen = false;
 
     }
     public void Interact()
-    {
+    { 
+        gameObject.GetComponent<Collider>().enabled = false;
         PlayerController.enabled = false;
         isActive = true;
-        playerCamera.gameObject.SetActive(false);
         tabletCamera.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -57,13 +58,12 @@ public class tablet : MonoBehaviour, IInteractable
     }
     void Stop()
     {
-        isActive = false;
         tabletCamera.gameObject.SetActive(false);
-        playerCamera.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         crosshair.gameObject.SetActive(true);
         gameObject.GetComponent<Collider>().enabled = true;
+        isActive = false;
     }
     public void pressed(int row, int col)
     {

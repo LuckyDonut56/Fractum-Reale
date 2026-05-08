@@ -3958,6 +3958,9 @@ MonoBehaviour:
   _room4: {fileID: 919132149057804998}
   fonarik: {fileID: 83912238}
   _cutscene: {fileID: 555073683}
+  outdoorSource: {fileID: 1894773488}
+  indoorSource: {fileID: 1337472021}
+  sc: {fileID: 7568175495929295308}
   isOpen: 0
 --- !u!4 &360900851
 Transform:
@@ -14421,7 +14424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b92d9eb2929105b4e8a2e11fb7baa4be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.27
+      value: -15.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b92d9eb2929105b4e8a2e11fb7baa4be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15944,7 +15947,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 01f966b88e31a024cb9f4cb1a37476af, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7f10e0c6993ecd84ba0e8d360b03395f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -18514,7 +18517,7 @@ Transform:
   m_GameObject: {fileID: 919132149057804998}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071065, z: -0, w: 0.7071071}
-  m_LocalPosition: {x: -7.536, y: 0, z: -15.35}
+  m_LocalPosition: {x: -7.536, y: 0, z: -15.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26151,6 +26154,7 @@ MonoBehaviour:
   mOFF: {fileID: -6538127246219892754, guid: 46e93161e31fb484cadbfc8225d7b4cd, type: 3}
   mON: {fileID: -3908378074932435330, guid: 46e93161e31fb484cadbfc8225d7b4cd, type: 3}
   cm: {fileID: 360900850}
+  trig: {fileID: 7568175495929295308}
 --- !u!65 &7984627566785196443
 BoxCollider:
   m_ObjectHideFlags: 0
