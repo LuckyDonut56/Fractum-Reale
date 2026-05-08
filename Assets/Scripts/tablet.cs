@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class tablet : MonoBehaviour, IInteractable
 {
-    public int[] sol = new int[5]{2,3,2,1,2};
+    public int[] sol = new int[5];
     [SerializeField] int[] state = new int[5]{0,0,0,0,0};
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Camera tabletCamera;
@@ -70,5 +70,9 @@ public class tablet : MonoBehaviour, IInteractable
         }
         GameObject.Find("TabletButton" + row  + ".00" + col).GetComponent<Renderer>().material = mON;
         state[row-1] = col;
+    }
+    public bool isSolved()
+    {
+        return state[0] == sol[0] && state[1] == sol[1] && state[2] == sol[2] && state[3] == sol[3] && state[4] == sol[4];
     }
 }
