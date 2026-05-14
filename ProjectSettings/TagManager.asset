@@ -8,6 +8,9 @@ TagManager:
   - room 2
   - doorroom1
   - flashlight
+  - VolumeSlider
+  - SensitivitySlider
+  - FPSButton
   layers:
   - Default
   - TransparentFX

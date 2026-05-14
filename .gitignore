@@ -97,3 +97,9 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+Assets/Materials/UVHours.mat
+Assets/Materials/UVMinutes.mat
+Assets/Materials/UVPicture1.mat
+Assets/Materials/UVPicture2.mat
+Assets/Materials/UVPicture3.mat
+Assets/Materials/UVSeconds.mat
